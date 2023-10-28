@@ -24,5 +24,6 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    void reset_simulation();
 };
 #endif // MAINWINDOW_H
