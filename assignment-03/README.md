@@ -1,3 +1,0 @@
-# Elevator Simulation Project
-
-work in progress...
