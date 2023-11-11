@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>661</width>
+    <width>938</width>
     <height>514</height>
    </rect>
   </property>
@@ -17,25 +17,25 @@
    <bool>false</bool>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QGroupBox" name="groupBox">
+   <widget class="QGroupBox" name="simulation_settings">
     <property name="geometry">
      <rect>
       <x>20</x>
       <y>20</y>
-      <width>280</width>
+      <width>311</width>
       <height>441</height>
      </rect>
     </property>
     <property name="title">
-     <string>simulation settings</string>
+     <string>Simulation Settings</string>
     </property>
     <widget class="QWidget" name="formLayoutWidget">
      <property name="geometry">
       <rect>
        <x>10</x>
        <y>30</y>
-       <width>261</width>
-       <height>237</height>
+       <width>277</width>
+       <height>241</height>
       </rect>
      </property>
      <layout class="QFormLayout" name="formLayout">
@@ -43,36 +43,27 @@
        <number>30</number>
       </property>
       <item row="0" column="0">
-       <widget class="QLabel" name="label_2">
+       <widget class="QLabel" name="label_4">
         <property name="text">
-         <string>number of floors</string>
+         <string>Number of passengers:</string>
         </property>
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QSpinBox" name="spinBox"/>
+       <widget class="QSpinBox" name="load">
+        <property name="value">
+         <number>1</number>
+        </property>
+       </widget>
       </item>
       <item row="1" column="0">
-       <widget class="QLabel" name="label_3">
+       <widget class="QLabel" name="label_6">
         <property name="text">
-         <string>number of elevators</string>
+         <string>Starting floor (default ground):</string>
         </property>
        </widget>
       </item>
-      <item row="1" column="1">
-       <widget class="QSpinBox" name="spinBox_2"/>
-      </item>
-      <item row="3" column="0">
-       <widget class="QLabel" name="label_4">
-        <property name="text">
-         <string>number of passengers</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="1">
-       <widget class="QSpinBox" name="load"/>
-      </item>
-      <item row="4" column="0" colspan="2">
+      <item row="2" column="0">
        <widget class="QLabel" name="label_5">
         <property name="text">
          <string>**Note:** An average weight of 70kg will be assumed for each passenger.</string>
@@ -85,24 +76,37 @@
         </property>
        </widget>
       </item>
-      <item row="5" column="0">
+      <item row="3" column="0">
        <widget class="QCheckBox" name="fire_check">
         <property name="text">
          <string>fire</string>
         </property>
        </widget>
       </item>
-      <item row="6" column="0">
+      <item row="4" column="0">
        <widget class="QCheckBox" name="obstructed_check">
         <property name="text">
          <string>obstruct door</string>
         </property>
        </widget>
       </item>
-      <item row="7" column="0">
+      <item row="5" column="0">
        <widget class="QCheckBox" name="power_outage">
         <property name="text">
          <string>power outage</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QSpinBox" name="curr_floor">
+        <property name="minimum">
+         <number>1</number>
+        </property>
+        <property name="maximum">
+         <number>6</number>
+        </property>
+        <property name="value">
+         <number>1</number>
         </property>
        </widget>
       </item>
@@ -164,19 +168,19 @@
      </property>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="groupBox_2">
+   <widget class="QGroupBox" name="elevator_panel">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>20</y>
+      <x>640</x>
+      <y>30</y>
       <width>280</width>
       <height>421</height>
      </rect>
     </property>
     <property name="title">
-     <string>elevator panel</string>
+     <string>Elevator 1</string>
     </property>
-    <widget class="QLCDNumber" name="lcdNumber">
+    <widget class="QLCDNumber" name="display">
      <property name="geometry">
       <rect>
        <x>90</x>
@@ -205,7 +209,7 @@ color: orange;</string>
        <x>60</x>
        <y>100</y>
        <width>191</width>
-       <height>276</height>
+       <height>284</height>
       </rect>
      </property>
      <layout class="QFormLayout" name="formLayout_3">
@@ -379,10 +383,10 @@ QPushButton:checked {
     <widget class="QWidget" name="horizontalLayoutWidget">
      <property name="geometry">
       <rect>
-       <x>80</x>
-       <y>340</y>
-       <width>111</width>
-       <height>51</height>
+       <x>40</x>
+       <y>320</y>
+       <width>131</width>
+       <height>66</height>
       </rect>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout">
@@ -438,6 +442,55 @@ QPushButton:pressed {
       </item>
      </layout>
     </widget>
+    <widget class="QPushButton" name="help">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>320</y>
+       <width>64</width>
+       <height>64</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    border-image: url(:/images/help.png);
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="request_elevator">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>190</y>
+      <width>62</width>
+      <height>64</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* Default state (not pressed) */
+QPushButton {
+    border-image: url(:/images/request-elevator.png);
+}
+
+/* When the button is pressed */
+QPushButton:pressed {
+    border-image: url(:/images/request-elevator-pushed.png);
+}
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -445,7 +498,7 @@ QPushButton:pressed {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>661</width>
+     <width>938</width>
      <height>22</height>
     </rect>
    </property>
