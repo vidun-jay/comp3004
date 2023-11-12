@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/elevator-close.png</file>
+        <file>images/elevator-open.png</file>
+        <file>images/elevator-close-pushed.png</file>
+        <file>images/elevator-open-pushed.png</file>
+        <file>images/led-off.png</file>
+        <file>images/led-on.png</file>
+        <file>images/help.png</file>
+        <file>images/request-elevator-pushed.png</file>
+        <file>images/request-elevator.png</file>
+    </qresource>
+</RCC>
