@@ -1103,6 +1103,9 @@ compiler_moc_header_clean:
 moc_mainwindow.cpp: mainwindow.h \
 		/opt/homebrew/lib/QtWidgets.framework/Headers/QMainWindow \
 		/opt/homebrew/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		elevator.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/QTimer \
+		/opt/homebrew/lib/QtCore.framework/Headers/qtimer.h \
 		moc_predefs.h \
 		/opt/homebrew/share/qt/libexec/moc
 	/opt/homebrew/share/qt/libexec/moc $(DEFINES) --include /Users/vidunjayakody/Desktop/comp3004/assignment-03/moc_predefs.h -I/opt/homebrew/share/qt/mkspecs/macx-clang -I/Users/vidunjayakody/Desktop/comp3004/assignment-03 -I/opt/homebrew/lib/QtWidgets.framework/Headers -I/opt/homebrew/lib/QtGui.framework/Headers -I/opt/homebrew/lib/QtCore.framework/Headers -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -I/Library/Developer/CommandLineTools/usr/include -F/opt/homebrew/lib mainwindow.h -o moc_mainwindow.cpp
@@ -1136,6 +1139,9 @@ elevator.o: elevator.cpp elevator.h
 main.o: main.cpp mainwindow.h \
 		/opt/homebrew/lib/QtWidgets.framework/Headers/QMainWindow \
 		/opt/homebrew/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		elevator.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/QTimer \
+		/opt/homebrew/lib/QtCore.framework/Headers/qtimer.h \
 		/opt/homebrew/lib/QtWidgets.framework/Headers/QApplication \
 		/opt/homebrew/lib/QtWidgets.framework/Headers/qapplication.h \
 		/opt/homebrew/lib/QtCore.framework/Headers/QLocale \
@@ -1147,10 +1153,12 @@ main.o: main.cpp mainwindow.h \
 mainwindow.o: mainwindow.cpp mainwindow.h \
 		/opt/homebrew/lib/QtWidgets.framework/Headers/QMainWindow \
 		/opt/homebrew/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		elevator.h \
+		/opt/homebrew/lib/QtCore.framework/Headers/QTimer \
+		/opt/homebrew/lib/QtCore.framework/Headers/qtimer.h \
 		ui_mainwindow.h \
 		/opt/homebrew/lib/QtWidgets.framework/Headers/QMessageBox \
 		/opt/homebrew/lib/QtWidgets.framework/Headers/qmessagebox.h \
-		elevator.h \
 		/opt/homebrew/lib/QtGui.framework/Headers/QPixmap \
 		/opt/homebrew/lib/QtGui.framework/Headers/qpixmap.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o mainwindow.cpp
