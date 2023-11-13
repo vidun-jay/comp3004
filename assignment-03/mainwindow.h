@@ -44,6 +44,8 @@ private slots:
 
     void on_close_door_button_2_clicked();
 
+    void on_help_2_clicked();
+
 private:
     Ui::MainWindow *ui;
     void reset_simulation();

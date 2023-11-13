@@ -46,6 +46,7 @@ void MainWindow::reset_simulation() {
     ui->elevator_panel->hide(); // hide the elevator panel
     ui->elevator_panel_2->hide(); // hide the second elevator panel
     ui->request_elevator->hide(); // hide the request elevator button
+    ui->request_elevator_2->hide();
     // reset displays to 1
     ui->display->display(1);
     ui->display_2->display(1);
@@ -303,6 +304,10 @@ void MainWindow::on_help_clicked() {
     QMessageBox::information(this, "Assistance Requested", "The staff have been notified that you require assistance. Starting voice line...");
 }
 
+void MainWindow::on_help_2_clicked() {
+    QMessageBox::information(this, "Assistance Requested", "The staff have been notified that you require assistance. Starting voice line...");
+}
+
 void MainWindow::on_request_elevator_clicked() {
     std::cout << "[CONSOLE] Elevator 1 requested" << std::endl;
     // show elevator panel
@@ -318,5 +323,3 @@ void MainWindow::on_request_elevator_2_clicked() {
     ui->elevator_panel_2->show();
     std::cout << "[CONSOLE] Elevator 2 has arrived" << std::endl;
 }
-
-
